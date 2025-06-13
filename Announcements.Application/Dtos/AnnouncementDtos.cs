@@ -1,4 +1,0 @@
-namespace Announcements.Application.Dtos
-{
-    
-}
