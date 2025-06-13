@@ -21,7 +21,7 @@ A robust and scalable Web API for managing announcements, built with .NET 8 and 
 * **Framework:** ASP.NET Core Web API
 * **Database:** PostgreSQL
 * **ORM:** Entity Framework Core 8
-* **API Documentation:** Swagger / OpenAPI
+* **API Documentation:** Swagger
 
 ---
 
