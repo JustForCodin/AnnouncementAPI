@@ -12,6 +12,7 @@ A robust and scalable Web API for managing announcements, built with .NET 8 and 
 * **View All Announcements:** Retrieve a list of all announcements, ordered by the most recent.
 * **View Announcement Details:** Get a single announcement by its ID, which also includes a list of the **top 3 most similar announcements**.
     * *Similarity is determined by a simple algorithm that counts shared words in the title and description.*
+* **I also implemented a UI in JS/React on top of this API - https://github.com/JustForCodin/announcement-frontend **.
 
 ---
 
