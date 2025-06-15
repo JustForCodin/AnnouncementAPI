@@ -4,6 +4,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// CORS Policy definition
+var AllowSpecificOrigins = "_AllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:5173")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                      });
+});
+
 // DbContext for PostgresQL
 builder.Services.AddDbContext<AnnouncemetDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -39,6 +53,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(AllowSpecificOrigins);
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
